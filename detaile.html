@@ -249,7 +249,22 @@
         <div class="rin-card-part" id="music">
             <div class="rin-card-title2 mdui-typo"><a href="#other">#</a> 你也很无聊？来听音乐吧!</div>
             <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=416552392&auto=0&height=66"></iframe>
-            
+            <script>
+                var url = "http://api.heterocraft.top/api/neteasemusic.php"
+                var data = "?a=416552392&b=416552392&c=416552392"
+                var xhrGet = new XMLHttpRequest();
+                xhrGet.open('GET', url + data, true);
+                xhrGet.send();
+                xhrGet.onreadystatechange = function() {
+                    if (xhrGet.readyState == 4 && xhrGet.status == 200) {
+                       //成功
+                        var result = xhrGet.responseText;
+                        console.log(result);
+                    } else {
+                    //失败
+                    }
+                };
+            </script>
 
         </div>
 
